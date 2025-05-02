@@ -25,6 +25,7 @@
             background-color: #1a1a2e;
             color: #e6e6e6;
             line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
         }
         
         .container {
@@ -41,6 +42,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: all 0.3s;
         }
         
         .header-content {
@@ -56,6 +58,7 @@
             text-decoration: none;
             display: flex;
             align-items: center;
+            transition: color 0.3s;
         }
         
         .logo span {
@@ -116,6 +119,7 @@
             background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), 
                         url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             text-align: center;
+            transition: all 0.3s;
         }
         
         .hero h1 {
@@ -130,6 +134,7 @@
             font-size: 24px;
             color: var(--secondary);
             margin-bottom: 30px;
+            transition: color 0.3s;
         }
         
         .hero p {
@@ -137,6 +142,7 @@
             margin: 0 auto 30px;
             font-size: 18px;
             color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s;
         }
         
         .main-btn {
@@ -196,6 +202,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
         }
         
         .games-table th {
@@ -245,11 +252,13 @@
             color: var(--secondary);
             margin-bottom: 10px;
             font-size: 20px;
+            transition: color 0.3s;
         }
         
         .game-card p {
             color: rgba(255, 255, 255, 0.7);
             font-size: 16px;
+            transition: color 0.3s;
         }
         
         /* System Requirements */
@@ -259,11 +268,13 @@
             border-radius: 10px;
             margin-top: 40px;
             border-left: 4px solid var(--accent);
+            transition: all 0.3s;
         }
         
         .requirements p {
             margin-bottom: 10px;
             color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s;
         }
         
         /* Footer */
@@ -272,11 +283,13 @@
             padding: 30px 0;
             text-align: center;
             margin-top: 60px;
+            transition: all 0.3s;
         }
         
         .footer-content p {
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 10px;
+            transition: color 0.3s;
         }
         
         .social-links {
@@ -295,6 +308,325 @@
         .social-links a:hover {
             color: var(--accent);
             transform: translateY(-3px);
+        }
+        
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            margin: 10% auto;
+            padding: 0;
+            border-radius: 12px;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--accent);
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            padding: 25px;
+            background: rgba(0, 206, 201, 0.1);
+            border-bottom: 1px solid rgba(0, 206, 201, 0.2);
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .modal-header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .download-options {
+            padding: 15px;
+        }
+        
+        .download-option {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: white;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .download-option:hover {
+            background: rgba(0, 206, 201, 0.2);
+            transform: translateX(5px);
+            border-color: var(--accent);
+        }
+        
+        .os-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 206, 201, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+            color: var(--accent);
+        }
+        
+        .os-info {
+            flex: 1;
+        }
+        
+        .os-name {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .os-details {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .download-option .fa-chevron-right {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .modal-footer {
+            padding: 15px 25px;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .security-badge i {
+            color: var(--accent);
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(0, 0, 0, 0.3);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .close:hover {
+            color: white;
+            background: rgba(210, 48, 49, 0.7);
+            transform: rotate(90deg);
+        }
+        
+        /* Переключатель тем */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .theme-toggle-label {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 110px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50px;
+            padding: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .theme-toggle-label:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .theme-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            position: absolute;
+        }
+        
+        .theme-icon.moon {
+            left: 5px;
+            color: #f1c40f;
+            background: rgba(241, 196, 15, 0.1);
+        }
+        
+        .theme-icon.sun {
+            right: 5px;
+            color: #f39c12;
+            background: rgba(243, 156, 18, 0.1);
+        }
+        
+        .ball {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            left: 5px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            z-index: 2;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        #theme-toggle {
+            display: none;
+        }
+        
+        #theme-toggle:checked + .theme-toggle-label .ball {
+            transform: translateX(70px);
+            background: #2d3436;
+        }
+        
+        #theme-toggle:checked + .theme-toggle-label .moon {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        
+        #theme-toggle:not(:checked) + .theme-toggle-label .sun {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        
+        .theme-tooltip {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            opacity: 0.8;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        /* Светлая тема */
+        body.light-theme {
+            --primary: #6c5ce7;
+            --secondary: #6c5ce7;
+            --dark: #f5f6fa;
+            --light: #2d3436;
+            --accent: #00a8ff;
+            --danger: #d63031;
+            
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        body.light-theme header,
+        body.light-theme footer {
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.light-theme .logo {
+            color: #333;
+        }
+        
+        body.light-theme nav a {
+            color: #555;
+        }
+        
+        body.light-theme nav a:hover {
+            color: #000;
+        }
+        
+        body.light-theme .hero {
+            background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), 
+                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        }
+        
+        body.light-theme .game-card,
+        body.light-theme .feature-card,
+        body.light-theme .games-table {
+            background: rgba(0, 0, 0, 0.03);
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        body.light-theme .game-card:hover,
+        body.light-theme .feature-card:hover {
+            background: rgba(0, 168, 255, 0.1);
+        }
+        
+        body.light-theme .games-table th {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        body.light-theme .theme-toggle-label {
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.light-theme .theme-toggle-label:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        body.light-theme .theme-tooltip {
+            color: #333;
+        }
+        
+        body.light-theme .modal-content {
+            background: linear-gradient(145deg, #f5f5f5, #e0e0e0);
+        }
+        
+        body.light-theme .download-option {
+            color: #333;
+            background: rgba(0, 0, 0, 0.05);
+        }
+        
+        body.light-theme .os-details {
+            color: rgba(0, 0, 0, 0.6);
         }
         
         /* Responsive */
@@ -321,10 +653,40 @@
                 display: block;
                 overflow-x: auto;
             }
+            
+            .modal-content {
+                width: 90%;
+                margin: 20% auto;
+            }
+            
+            .theme-switcher {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .theme-toggle-label {
+                width: 90px;
+                height: 35px;
+            }
+            
+            #theme-toggle:checked + .theme-toggle-label .ball {
+                transform: translateX(55px);
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Переключатель тем -->
+    <div class="theme-switcher">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle" class="theme-toggle-label">
+            <span class="theme-icon moon"><i class="fas fa-moon"></i></span>
+            <span class="theme-icon sun"><i class="fas fa-sun"></i></span>
+            <span class="ball"></span>
+            <span class="theme-tooltip">Темная тема</span>
+        </label>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container header-content">
@@ -342,7 +704,7 @@
     <section class="hero">
         <div class="container">
             <h1>Мы собрали все твои любимые читы в одном месте</h1>
-            <p>DICK- единая библиотека игровых модификаций. Наше приложение поможет тебе скачать читы и улучшения для CS 2, CS:GO, Minecraft и многих других популярных игр. Все совершенно бесплатно.</p>
+            <p>DICK - единая библиотека игровых модификаций. Наше приложение поможет тебе скачать читы и улучшения для CS 2, CS:GO, Minecraft и многих других популярных игр. Все совершенно бесплатно.</p>
             <a href="#" class="main-btn">Скачать бесплатно</a>
         </div>
     </section>
@@ -392,7 +754,7 @@
                 </div>
                 <div class="game-card">
                     <h3>Dota 2</h3>
-                    <p>Мsoon</p>
+                    <p>soon</p>
                 </div>
                 <div class="game-card">
                     <h3>Genshin Impact</h3>
@@ -432,7 +794,160 @@
         </div>
     </footer>
 
-    <!-- Font Awesome для иконок (можно подключить если нужны реальные иконки) -->
+    <!-- Модальное окно для скачивания -->
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h3><i class="fas fa-download"></i> Выберите версию</h3>
+                <p>Последняя версия: v2.4.1 (обновлено 02.05.2025)</p>
+            </div>
+            <div class="download-options">
+                <a href="#" class="download-option" data-os="windows">
+                    <div class="os-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <div class="os-info">
+                        <span class="os-name">Windows</span>
+                        <span class="os-details">64-bit • EXE • 15.2 MB</span>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                
+                <a href="#" class="download-option" data-os="macos">
+                    <div class="os-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div class="os-info">
+                        <span class="os-name">macOS</span>
+                        <span class="os-details">Universal • DMG • 18.7 MB</span>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                
+                <a href="#" class="download-option" data-os="linux">
+                    <div class="os-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <div class="os-info">
+                        <span class="os-name">Linux</span>
+                        <span class="os-details">64-bit • TAR.GZ • 12.8 MB</span>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+            <div class="modal-footer">
+                <div class="security-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Проверено на вирусы • Безопасная загрузка</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script>
+        // Обработка темы
+        document.addEventListener('DOMContentLoaded', function() {
+            // Переключатель темы
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            
+            // Проверяем сохраненную тему
+            if (localStorage.getItem('theme') === 'light') {
+                body.classList.add('light-theme');
+                themeToggle.checked = true;
+                document.querySelector('.theme-tooltip').textContent = 'Светлая тема';
+            } else if (localStorage.getItem('theme') === 'dark') {
+                body.classList.remove('light-theme');
+                themeToggle.checked = false;
+                document.querySelector('.theme-tooltip').textContent = 'Темная тема';
+            } else {
+                // Если тема не выбрана, проверяем системные настройки
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                    body.classList.add('light-theme');
+                    themeToggle.checked = true;
+                    document.querySelector('.theme-tooltip').textContent = 'Светлая тема';
+                }
+            }
+            
+            // Слушаем изменения системной темы
+            window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+                if (localStorage.getItem('theme') === null) {
+                    if (e.matches) {
+                        body.classList.add('light-theme');
+                        themeToggle.checked = true;
+                        document.querySelector('.theme-tooltip').textContent = 'Светлая тема';
+                    } else {
+                        body.classList.remove('light-theme');
+                        themeToggle.checked = false;
+                        document.querySelector('.theme-tooltip').textContent = 'Темная тема';
+                    }
+                }
+            });
+            
+            // Обработка переключения темы
+            themeToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    body.classList.add('light-theme');
+                    localStorage.setItem('theme', 'light');
+                    document.querySelector('.theme-tooltip').textContent = 'Светлая тема';
+                } else {
+                    body.classList.remove('light-theme');
+                    localStorage.setItem('theme', 'dark');
+                    document.querySelector('.theme-tooltip').textContent = 'Темная тема';
+                }
+            });
+            
+            // Модальное окно для скачивания
+            const modal = document.getElementById('downloadModal');
+            const downloadBtns = document.querySelectorAll('.download-btn, .main-btn');
+            const closeBtn = document.querySelector('.close');
+            
+            // Открытие модального окна
+            downloadBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Закрытие модального окна
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Закрытие при клике вне окна
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Закрытие по ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Обработка выбора ОС
+            document.querySelectorAll('.download-option').forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const os = this.getAttribute('data-os');
+                    alert(`Начато скачивание для ${os}. В реальном приложении здесь была бы загрузка.`);
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
